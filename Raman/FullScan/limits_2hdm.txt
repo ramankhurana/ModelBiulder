@@ -1,0 +1,2 @@
+med dm twosigdown onesigdown exp onesigup twosigup
+1000 300     

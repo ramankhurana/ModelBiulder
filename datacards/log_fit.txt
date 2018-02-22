@@ -1,0 +1,476 @@
+>>> including systematics
+>>> method used to compute upper limit is MaxLikelihoodFit
+>>> random number generator seed is 123456
+[?1034hXXX TMP EXPRESSION
+[['zvvpasssignal', '(@0*1.0)', 'zlleffSF', 1], '']
+XXX TMP EXPRESSION
+[]
+sigANDzvv
+XXX TMP EXPRESSION
+[['zllpassdimuon', '(@0*1.0)', 'zlleffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv']
+zmmANDzll
+XXX TMP EXPRESSION
+[['zllpassdielectron', '(@0*1.0)', 'zlleffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zmmANDzll']
+zeeANDzll
+XXX TMP EXPRESSION
+[['zllfaildimuon', '((1.0-@0*@1)/(1.0-@1))', 'zlleffSF,zjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zeeANDzll', 'zmmANDzll']
+zmm_failANDzll
+XXX TMP EXPRESSION
+[['zllfaildielectron', '((1.0-@0*@1)/(1.0-@1))', 'zlleffSF,zjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zeeANDzll', 'zmmANDzll', 'zmm_failANDzll']
+zee_failANDzll
+XXX TMP EXPRESSION
+[['wlnpasssignal', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zee_failANDzll', 'zeeANDzll', 'zmmANDzll', 'zmm_failANDzll']
+sigANDwjets
+XXX TMP EXPRESSION
+[['wlnpassmuon', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'zeeANDzll', 'zmmANDzll', 'sigANDzvv']
+wmnANDwjets
+XXX TMP EXPRESSION
+[['wlnpasselectron', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'zmmANDzll', 'sigANDzvv']
+wenANDwjets
+XXX TMP EXPRESSION
+[['wlnfailmuon', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv']
+wmn_failANDwjets
+XXX TMP EXPRESSION
+[['wlnfailelectron', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv']
+wen_failANDwjets
+XXX TMP EXPRESSION
+[['wlnpassmuon_2', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets']
+tmnANDwjets
+XXX TMP EXPRESSION
+[['wlnpasselectron_2', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets']
+tenANDwjets
+XXX TMP EXPRESSION
+[['wlnfailmuon_2', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets']
+tmn_failANDwjets
+XXX TMP EXPRESSION
+[['wlnfailelectron_2', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+ten_failANDwjets
+XXX TMP EXPRESSION
+[['ttbarpasssignal', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+sigANDttbar
+XXX TMP EXPRESSION
+[['ttbarpassmuon', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'sigANDttbar', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+tmnANDttbar
+XXX TMP EXPRESSION
+[['ttbarpasselectron', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+tenANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailmuon', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbar_doubleb_eff', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+tmn_failANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailelectron', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbar_doubleb_eff', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+ten_failANDttbar
+XXX TMP EXPRESSION
+[['ttbarpassmuon_2', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'ten_failANDttbar', 'tmn_failANDwjets']
+wmnANDttbar
+XXX TMP EXPRESSION
+[['ttbarpasselectron_2', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'ten_failANDttbar', 'tmn_failANDwjets', 'wmnANDttbar']
+wenANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailmuon_2', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbar_doubleb_eff', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'wenANDttbar', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'ten_failANDttbar', 'tmn_failANDwjets', 'wmnANDttbar']
+wmn_failANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailelectron_2', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbar_doubleb_eff', 1], '']
+XXX TMP EXPRESSION
+['wmn_failANDttbar', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'tenANDwjets', 'wenANDttbar', 'sigANDzvv', 'sigANDttbar', 'wmn_failANDwjets', 'tmn_failANDttbar', 'zmm_failANDzll', 'tmnANDttbar', 'ten_failANDttbar', 'wen_failANDwjets', 'wmnANDttbar', 'sigANDwjets', 'ten_failANDwjets', 'wenANDwjets', 'tmn_failANDwjets', 'tmnANDwjets', 'zmmANDzll', 'tenANDttbar']
+wen_failANDttbar
+####### rp wmn_failANDttbar
+####### rk 0
+####### rp zee_failANDzll
+####### rk 0
+####### rp wmnANDwjets
+####### rk 0
+####### rp zeeANDzll
+####### rk 0
+####### rp tenANDwjets
+####### rk 0
+####### rp wenANDttbar
+####### rk 0
+####### rp sigANDzvv
+####### rk 0
+####### rp sigANDttbar
+####### rk 0
+####### rp wmn_failANDwjets
+####### rk 0
+####### rp tmn_failANDttbar
+####### rk 0
+####### rp zmm_failANDzll
+####### rk 0
+####### rp tmnANDttbar
+####### rk 0
+####### rp ten_failANDttbar
+####### rk 0
+####### rp wen_failANDwjets
+####### rk 0
+####### rp wmnANDttbar
+####### rk 0
+####### rp sigANDwjets
+####### rk 0
+####### rp ten_failANDwjets
+####### rk 0
+####### rp wen_failANDttbar
+####### rk 0
+####### rp wenANDwjets
+####### rk 0
+####### rp tmn_failANDwjets
+####### rk 0
+####### rp tmnANDwjets
+####### rk 0
+####### rp zmmANDzll
+####### rk 0
+####### rp tenANDttbar
+####### rk 0
+1
+Hi1
+ttbarfailmuon_2
+((1.0-@0*@1)/(1.0-@1))
+ttbareffSF,ttbar_doubleb_eff
+Hi2
+1
+Hi1
+zllfaildielectron
+((1.0-@0*@1)/(1.0-@1))
+zlleffSF,zjetseff
+Hi2
+1
+Hi1
+wlnpassmuon
+(@0*1.0)
+wlneffSF
+Hi2
+1
+Hi1
+zllpassdielectron
+(@0*1.0)
+zlleffSF
+Hi2
+1
+Hi1
+wlnpasselectron_2
+(@0*1.0)
+wlneffSF
+Hi2
+1
+Hi1
+ttbarpasselectron_2
+(@0*1.0)
+ttbareffSF
+Hi2
+1
+Hi1
+zvvpasssignal
+(@0*1.0)
+zlleffSF
+Hi2
+1
+Hi1
+ttbarpasssignal
+(@0*1.0)
+ttbareffSF
+Hi2
+1
+Hi1
+wlnfailmuon
+((1.0-@0*@1)/(1.0-@1))
+wlneffSF,wjetseff
+Hi2
+1
+Hi1
+ttbarfailmuon
+((1.0-@0*@1)/(1.0-@1))
+ttbareffSF,ttbar_doubleb_eff
+Hi2
+1
+Hi1
+zllfaildimuon
+((1.0-@0*@1)/(1.0-@1))
+zlleffSF,zjetseff
+Hi2
+1
+Hi1
+ttbarpassmuon
+(@0*1.0)
+ttbareffSF
+Hi2
+1
+Hi1
+ttbarfailelectron
+((1.0-@0*@1)/(1.0-@1))
+ttbareffSF,ttbar_doubleb_eff
+Hi2
+1
+Hi1
+wlnfailelectron
+((1.0-@0*@1)/(1.0-@1))
+wlneffSF,wjetseff
+Hi2
+1
+Hi1
+ttbarpassmuon_2
+(@0*1.0)
+ttbareffSF
+Hi2
+1
+Hi1
+wlnpasssignal
+(@0*1.0)
+wlneffSF
+Hi2
+1
+Hi1
+wlnfailelectron_2
+((1.0-@0*@1)/(1.0-@1))
+wlneffSF,wjetseff
+Hi2
+1
+Hi1
+ttbarfailelectron_2
+((1.0-@0*@1)/(1.0-@1))
+ttbareffSF,ttbar_doubleb_eff
+Hi2
+1
+Hi1
+wlnpasselectron
+(@0*1.0)
+wlneffSF
+Hi2
+1
+Hi1
+wlnfailmuon_2
+((1.0-@0*@1)/(1.0-@1))
+wlneffSF,wjetseff
+Hi2
+1
+Hi1
+wlnpassmuon_2
+(@0*1.0)
+wlneffSF
+Hi2
+1
+Hi1
+zllpassdimuon
+(@0*1.0)
+zlleffSF
+Hi2
+1
+Hi1
+ttbarpasselectron
+(@0*1.0)
+ttbareffSF
+Hi2
+Computing limit starting from observation
+Created Branches
+Constraints of type RooGaussian: 70
+Constraints of type SimpleGaussianConstraint: 27
+Constraints of type RooGaussian: 70
+Constraints of type SimpleGaussianConstraint: 27
+index 0, Name sig/qcd, val 9.91398e-05
+index 1, Name ten/qcd, val 0.000121417
+index 2, Name zee/dibosons, val 1.37685
+index 3, Name zmm/dibosons, val 0.612413
+index 4, Name sig/dibosons, val 26.9665
+index 5, Name sig/signal, val 0
+index 6, Name sig/stop, val 28.0194
+index 7, Name sig/ttbar, val 262.982
+index 8, Name sig/vh, val 23.7588
+index 9, Name sig/wjets, val 179.457
+index 10, Name sig/zvv, val 389.009
+index 11, Name ten_fail/dibosons, val 9.73433
+index 12, Name ten_fail/qcd, val 42.3185
+index 13, Name ten_fail/stop, val 83.9386
+index 14, Name ten_fail/ttbar, val 1124.71
+index 15, Name ten_fail/wjets, val 322.909
+index 16, Name ten_fail/zll, val 6.31312
+index 17, Name ten/dibosons, val 0.423771
+index 18, Name ten/stop, val 15.5572
+index 19, Name ten/ttbar, val 219.64
+index 20, Name ten/tth, val 0.33352
+index 21, Name ten/vh, val 0.304956
+index 22, Name ten/wjets, val 6.67458
+index 23, Name ten/zll, val 0.329705
+index 24, Name tmn_fail/dibosons, val 20.3999
+index 25, Name tmn_fail/qcd, val 23.4509
+index 26, Name tmn_fail/stop, val 145.177
+index 27, Name tmn_fail/ttbar, val 1851.56
+index 28, Name tmn_fail/wjets, val 564.001
+index 29, Name tmn_fail/zll, val 19.7856
+index 30, Name tmn/dibosons, val 1.11658
+index 31, Name tmn/qcd, val 0.505244
+index 32, Name tmn/stop, val 25.3879
+index 33, Name tmn/ttbar, val 384.923
+index 34, Name tmn/tth, val 0.492968
+index 35, Name tmn/vh, val 0.606365
+index 36, Name tmn/wjets, val 14.5665
+index 37, Name tmn/zll, val 0.691845
+index 38, Name wen_fail/dibosons, val 154.975
+index 39, Name wen_fail/qcd, val 172.372
+index 40, Name wen_fail/stop, val 362.439
+index 41, Name wen_fail/ttbar, val 1937.73
+index 42, Name wen_fail/wjets, val 6720.75
+index 43, Name wen_fail/zll, val 94.3724
+index 44, Name wen/dibosons, val 7.06891
+index 45, Name wen/qcd, val 1.12243
+index 46, Name wen/stop, val 85.8909
+index 47, Name wen/ttbar, val 391.076
+index 48, Name wen/vh, val 10.8393
+index 49, Name wen/wjets, val 204.161
+index 50, Name wen/zll, val 3.57187
+index 51, Name wmn_fail/dibosons, val 282.223
+index 52, Name wmn_fail/qcd, val 243.867
+index 53, Name wmn_fail/stop, val 639.476
+index 54, Name wmn_fail/ttbar, val 3104.98
+index 55, Name wmn_fail/wjets, val 12531.1
+index 56, Name wmn_fail/zll, val 350.416
+index 57, Name wmn/dibosons, val 11.3725
+index 58, Name wmn/qcd, val 7.32151
+index 59, Name wmn/stop, val 150.542
+index 60, Name wmn/ttbar, val 643.547
+index 61, Name wmn/vh, val 16.8241
+index 62, Name wmn/wjets, val 387.115
+index 63, Name wmn/zll, val 11.5191
+index 64, Name zee_fail/dibosons, val 19.8176
+index 65, Name zee_fail/stop, val 2.41481
+index 66, Name zee_fail/ttbar, val 15.38
+index 67, Name zee_fail/zll, val 859.935
+index 68, Name zee/stop, val 1.13732
+index 69, Name zee/ttbar, val 2.45825
+index 70, Name zee/vh, val 2.07636
+index 71, Name zee/zll, val 31.6989
+index 72, Name zmm_fail/dibosons, val 27.9123
+index 73, Name zmm_fail/stop, val 3.47883
+index 74, Name zmm_fail/ttbar, val 20.4733
+index 75, Name zmm_fail/zll, val 1311.35
+index 76, Name zmm/stop, val 1.73462
+index 77, Name zmm/ttbar, val 3.87907
+index 78, Name zmm/vh, val 2.97641
+index 79, Name zmm/zll, val 50.4965
+Running Minos for POI 
+Real time 0:00:00, CP time 0.940
+
+index 0, Name sig/qcd, val 9.91698e-05
+index 1, Name ten/qcd, val 0.000121266
+index 2, Name zee/dibosons, val 1.37726
+index 3, Name zmm/dibosons, val 0.61261
+index 4, Name sig/dibosons, val 26.9718
+index 5, Name sig/signal, val 2.51845
+index 6, Name sig/stop, val 28.0519
+index 7, Name sig/ttbar, val 262.967
+index 8, Name sig/vh, val 23.7674
+index 9, Name sig/wjets, val 179.08
+index 10, Name sig/zvv, val 387.406
+index 11, Name ten_fail/dibosons, val 9.73594
+index 12, Name ten_fail/qcd, val 42.2566
+index 13, Name ten_fail/stop, val 84.0378
+index 14, Name ten_fail/ttbar, val 1124.86
+index 15, Name ten_fail/wjets, val 322.721
+index 16, Name ten_fail/zll, val 6.31454
+index 17, Name ten/dibosons, val 0.423873
+index 18, Name ten/stop, val 15.5753
+index 19, Name ten/ttbar, val 219.639
+index 20, Name ten/tth, val 0.333659
+index 21, Name ten/vh, val 0.305035
+index 22, Name ten/wjets, val 6.66685
+index 23, Name ten/zll, val 0.329782
+index 24, Name tmn_fail/dibosons, val 20.402
+index 25, Name tmn_fail/qcd, val 23.4586
+index 26, Name tmn_fail/stop, val 145.349
+index 27, Name tmn_fail/ttbar, val 1851.77
+index 28, Name tmn_fail/wjets, val 563.633
+index 29, Name tmn_fail/zll, val 19.7899
+index 30, Name tmn/dibosons, val 1.11663
+index 31, Name tmn/qcd, val 0.505378
+index 32, Name tmn/stop, val 25.4175
+index 33, Name tmn/ttbar, val 384.915
+index 34, Name tmn/tth, val 0.493169
+index 35, Name tmn/vh, val 0.606516
+index 36, Name tmn/wjets, val 14.5518
+index 37, Name tmn/zll, val 0.692102
+index 38, Name wen_fail/dibosons, val 155.016
+index 39, Name wen_fail/qcd, val 172.16
+index 40, Name wen_fail/stop, val 362.882
+index 41, Name wen_fail/ttbar, val 1939.21
+index 42, Name wen_fail/wjets, val 6718.94
+index 43, Name wen_fail/zll, val 94.4109
+index 44, Name wen/dibosons, val 7.07079
+index 45, Name wen/qcd, val 1.12104
+index 46, Name wen/stop, val 85.996
+index 47, Name wen/ttbar, val 391.137
+index 48, Name wen/vh, val 10.844
+index 49, Name wen/wjets, val 203.844
+index 50, Name wen/zll, val 3.57336
+index 51, Name wmn_fail/dibosons, val 282.298
+index 52, Name wmn_fail/qcd, val 243.986
+index 53, Name wmn_fail/stop, val 640.258
+index 54, Name wmn_fail/ttbar, val 3107.44
+index 55, Name wmn_fail/wjets, val 12527.6
+index 56, Name wmn_fail/zll, val 350.559
+index 57, Name wmn/dibosons, val 11.3755
+index 58, Name wmn/qcd, val 7.32516
+index 59, Name wmn/stop, val 150.726
+index 60, Name wmn/ttbar, val 643.653
+index 61, Name wmn/vh, val 16.8316
+index 62, Name wmn/wjets, val 386.554
+index 63, Name wmn/zll, val 11.5239
+index 64, Name zee_fail/dibosons, val 19.8236
+index 65, Name zee_fail/stop, val 2.41786
+index 66, Name zee_fail/ttbar, val 15.3952
+index 67, Name zee_fail/zll, val 859.912
+index 68, Name zee/stop, val 1.13878
+index 69, Name zee/ttbar, val 2.46104
+index 70, Name zee/vh, val 2.07734
+index 71, Name zee/zll, val 31.597
+index 72, Name zmm_fail/dibosons, val 27.9214
+index 73, Name zmm_fail/stop, val 3.48333
+index 74, Name zmm_fail/ttbar, val 20.4926
+index 75, Name zmm_fail/zll, val 1311.32
+index 76, Name zmm/stop, val 1.73685
+index 77, Name zmm/ttbar, val 3.88349
+index 78, Name zmm/vh, val 2.97787
+index 79, Name zmm/zll, val 50.3391
+
+ --- MaxLikelihoodFit ---
+Best fit r: 0.0205619  -0.0205619/+0.281065  (68% CL)
+nll S+B -> -154.82  nll B -> -154.818
+Done in 0.57 min (cpu), 0.58 min (real)

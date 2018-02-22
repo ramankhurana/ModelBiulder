@@ -1,0 +1,60 @@
+from ROOT import *
+from collections import defaultdict
+from os import getenv
+from array import array
+#from __future__ import print_function
+
+
+new_dic = defaultdict(dict)
+
+def plot():
+  basedir = getenv('CMSSW_BASE') + '/src/MonoXFit_MonoH/'
+
+  f_data = TFile(basedir+'/files/unc/fixtrig_monoh.root','READ')
+
+  h_data_up = gDirectory.Get("trig_sys_up")
+  h_data_down = gDirectory.Get("trig_sys_down")
+
+  gStyle.SetOptStat(0)
+  gStyle.SetNdivisions(405, "XYZ")
+
+  c = TCanvas("c","c",660,600)  
+  SetOwnership(c,False)
+  c.cd()
+  c.SetFillColor(0);
+  c.SetBorderMode(0);
+  c.SetBorderSize(10);
+  c.SetLeftMargin(0.12);
+  c.SetRightMargin(0.07);
+  c.SetTopMargin(0.04838082);
+  c.SetBottomMargin(0.14);
+
+  h_data_up.SetTitle("")
+  h_data_up.GetXaxis().SetTitle("Recoil (GeV)")
+  h_data_up.GetYaxis().SetTitle("Trigger efficiency")
+  h_data_up.GetYaxis().SetTitleOffset(1.5)
+  h_data_up.Draw("hist")
+  h_data_down.Draw("hist same")
+
+
+  latex2 = TLatex()
+  latex2.SetNDC()
+  latex2.SetTextSize(0.85*c.GetTopMargin())
+  latex2.SetTextFont(42)
+  latex2.SetTextAlign(31) # align right
+  latex2.SetTextSize(0.92*c.GetTopMargin())
+  
+
+  latex_CMS = TLatex()
+  latex_CMS.SetNDC()
+  latex_CMS.SetTextFont(42)
+  latex_CMS.SetTextSize(0.06);
+  latex_CMS.DrawLatex(0.16,0.87715,"#bf{CMS}#scale[0.8]{#it{ Preliminary}}")
+  latex_CMS.DrawLatex(0.16,0.82,"#scale[0.5]{Syst. unc. from difference in Z#rightarrow#mu#mu and W#rightarrow l#nu trigger turn-ons}")
+  
+  
+  c.SaveAs("fixtrig_monoh.pdf")
+  c.SaveAs("fixtrig_monog.png")
+
+
+plot()
