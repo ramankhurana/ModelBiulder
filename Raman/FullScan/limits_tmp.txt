@@ -1,0 +1,118 @@
+>>> including systematics
+>>> method used to compute upper limit is Asymptotic
+>>> random number generator seed is 123456
+[?1034hXXX TMP EXPRESSION
+[['zvvpasssignal', '(@0*1.0)', 'zlleffSF', 1], '']
+XXX TMP EXPRESSION
+[]
+sigANDzvv
+XXX TMP EXPRESSION
+[['zllpassdimuon', '(@0*1.0)', 'zlleffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv']
+zmmANDzll
+XXX TMP EXPRESSION
+[['zllpassdielectron', '(@0*1.0)', 'zlleffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zmmANDzll']
+zeeANDzll
+XXX TMP EXPRESSION
+[['zllfaildimuon', '((1.0-@0*@1)/(1.0-@1))', 'zlleffSF,zjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zeeANDzll', 'zmmANDzll']
+zmm_failANDzll
+XXX TMP EXPRESSION
+[['zllfaildielectron', '((1.0-@0*@1)/(1.0-@1))', 'zlleffSF,zjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zeeANDzll', 'zmmANDzll', 'zmm_failANDzll']
+zee_failANDzll
+XXX TMP EXPRESSION
+[['wlnpasssignal', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDzvv', 'zee_failANDzll', 'zeeANDzll', 'zmmANDzll', 'zmm_failANDzll']
+sigANDwjets
+XXX TMP EXPRESSION
+[['wlnpassmuon', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'zeeANDzll', 'zmmANDzll', 'sigANDzvv']
+wmnANDwjets
+XXX TMP EXPRESSION
+[['wlnpasselectron', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'zmmANDzll', 'sigANDzvv']
+wenANDwjets
+XXX TMP EXPRESSION
+[['wlnfailmuon', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv']
+wmn_failANDwjets
+XXX TMP EXPRESSION
+[['wlnfailelectron', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv']
+wen_failANDwjets
+XXX TMP EXPRESSION
+[['wlnpassmuon_2', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets']
+tmnANDwjets
+XXX TMP EXPRESSION
+[['wlnpasselectron_2', '(@0*1.0)', 'wlneffSF', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets']
+tenANDwjets
+XXX TMP EXPRESSION
+[['wlnfailmuon_2', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets']
+tmn_failANDwjets
+XXX TMP EXPRESSION
+[['wlnfailelectron_2', '((1.0-@0*@1)/(1.0-@1))', 'wlneffSF,wjetseff', 1], '']
+XXX TMP EXPRESSION
+['sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+ten_failANDwjets
+XXX TMP EXPRESSION
+[['ttbarpasssignal', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+sigANDttbar
+XXX TMP EXPRESSION
+[['ttbarpassmuon', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'sigANDttbar', 'zeeANDzll', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+tmnANDttbar
+XXX TMP EXPRESSION
+[['ttbarpasselectron', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'wmnANDwjets', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+tenANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailmuon', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbareff', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+tmn_failANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailelectron', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbareff', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'tmn_failANDwjets']
+ten_failANDttbar
+XXX TMP EXPRESSION
+[['ttbarpassmuon_2', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'ten_failANDttbar', 'tmn_failANDwjets']
+wmnANDttbar
+XXX TMP EXPRESSION
+[['ttbarpasselectron_2', '(@0*1.0)', 'ttbareffSF', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'ten_failANDttbar', 'tmn_failANDwjets', 'wmnANDttbar']
+wenANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailmuon_2', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbareff', 1], '']
+XXX TMP EXPRESSION
+['ten_failANDwjets', 'sigANDwjets', 'wmn_failANDwjets', 'zmm_failANDzll', 'zee_failANDzll', 'tenANDttbar', 'wmnANDwjets', 'tmn_failANDttbar', 'sigANDttbar', 'zeeANDzll', 'tmnANDttbar', 'wenANDwjets', 'tenANDwjets', 'zmmANDzll', 'wenANDttbar', 'sigANDzvv', 'wen_failANDwjets', 'tmnANDwjets', 'ten_failANDttbar', 'tmn_failANDwjets', 'wmnANDttbar']
+wmn_failANDttbar
+XXX TMP EXPRESSION
+[['ttbarfailelectron_2', '((1.0-@0*@1)/(1.0-@1))', 'ttbareffSF,ttbareff', 1], '']
+XXX TMP EXPRESSION
+['wmn_failANDttbar', 'zee_failANDzll', 'wmnANDwjets', 'zeeANDzll', 'tenANDwjets', 'wenANDttbar', 'sigANDzvv', 'sigANDttbar', 'wmn_failANDwjets', 'tmn_failANDttbar', 'zmm_failANDzll', 'tmnANDttbar', 'ten_failANDttbar', 'wen_failANDwjets', 'wmnANDttbar', 'sigANDwjets', 'ten_failANDwjets', 'wenANDwjets', 'tmn_failANDwjets', 'tmnANDwjets', 'zmmANDzll', 'tenANDttbar']
+wen_failANDttbar

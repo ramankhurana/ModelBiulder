@@ -1,0 +1,2 @@
+med dm twosigdown onesigdown exp onesigup twosigup observed
+500 1      25.2261000
