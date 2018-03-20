@@ -36,8 +36,10 @@ shapes gjets     pho       ../combined_model.root combinedws:monohiggs_photonMod
 shapes *         sig       ../combined_model.root combinedws:monohiggs_signal_$PROCESS combinedws:monohiggs_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs  sig       ../combined_model.root combinedws:monohiggs_signal_data
 
-##shapes signal    sig     ../combined_model.root combinedws:monohiggs_signal_BarZp-500-1_signal combinedws:monohiggs_signal_BarZp-500-1_signal_$SYSTEMATIC
-shapes signal    sig       original.root monohiggs_signal_BarZp-500-1_signal monohiggs_signal_BarZp-500-1_signal_$SYSTEMATIC
+shapes signal    sig     ../combined_model.root combinedws:reweighted_signal_BarZp-1000-150_signal combinedws:reweighted_signal_BarZp-1000-150_signal_$SYSTEMATIC
+#shapes signal    sig       ../combined_model.root combinedws:monohiggs_signal_BarZp-1000-150_signal combinedws:monohiggs_signal_BarZp-1000-150_signal_$SYSTEMATIC
+#shapes signal    sig       ../combined_model.root combinedws:reweighted_original_signal_BarZp-1000-150_signal combinedws:reweighted_original_signal_BarZp-1000-150_signal_$SYSTEMATIC
+#shapes signal    sig       ../combined_model.root monohiggs_signal_BarZp-BarZp-1000-150_signal monohiggs_signal_BarZp-BarZp-1000-150_signal_$SYSTEMATIC
 
 shapes ttbar     sig       ../combined_model.root combinedws:monohiggs_signal_ttbar_model
 shapes wjets     sig       ../combined_model.root combinedws:monohiggs_signal_wjets_model

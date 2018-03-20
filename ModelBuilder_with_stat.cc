@@ -1,10 +1,77 @@
 
+
 #include "ModelBuilder.h"
 #include "RooCategory.h"
 
 void ModelBuilder::add_cut(std::string region,std::string ecut){
   std::cout << " Adding cut - " << region << ", " << ecut << std::endl;
   extracuts[region]+=ecut;
+}
+
+void ModelBuilder::saveReweightedHist(){
+  TFile* freweighted = new TFile("datacards/original.root");
+  
+  
+  TH1F* h_rew = (TH1F*) freweighted->Get("monohiggs_signal_BarZp-500-1_signal");
+  h_rew->SetName("reweighted_monohiggs_signal_BarZp-500-1_signal");
+  fOut->WriteTObject(h_rew);
+  
+  RooDataHist tmp_hist(h_rew->GetName(),h_rew->GetTitle(), RooArgList(*(wspace->var(varstring.c_str()))),h_rew);     
+  wspace->import(tmp_hist);                                                                                                                                                       
+  RooHistPdf tmp_pdf(h_rew->GetName(),h_rew->GetTitle(),RooArgSet(*(wspace->var(varstring.c_str()))),*((RooDataHist*)(wspace->data(tmp_hist.GetName()))));
+  wspace->import(tmp_pdf);
+    
+  
+  
+
+  h_rew = (TH1F*) freweighted->Get("monohiggs_signal_BarZp-500-1_signal_btagUp");
+  h_rew->SetName("reweighted_monohiggs_signal_BarZp-500-1_signal_btagUp");
+  fOut->WriteTObject(h_rew);
+  
+  RooDataHist tmp_hist1(h_rew->GetName(),h_rew->GetTitle(), RooArgList(*(wspace->var(varstring.c_str()))),h_rew);     
+  wspace->import(tmp_hist1);                                                                                                                                                       
+  RooHistPdf tmp_pdf1(h_rew->GetName(),h_rew->GetTitle(),RooArgSet(*(wspace->var(varstring.c_str()))),*((RooDataHist*)(wspace->data(tmp_hist1.GetName()))));
+  wspace->import(tmp_pdf1);
+  
+
+  
+  h_rew = (TH1F*) freweighted->Get("monohiggs_signal_BarZp-500-1_signal_btagDown");
+  h_rew->SetName("reweighted_monohiggs_signal_BarZp-500-1_signal_btagDown");
+  fOut->WriteTObject(h_rew);
+  
+  RooDataHist tmp_hist2(h_rew->GetName(),h_rew->GetTitle(), RooArgList(*(wspace->var(varstring.c_str()))),h_rew);     
+  wspace->import(tmp_hist2);                                                                                                                                                       
+  RooHistPdf tmp_pdf2(h_rew->GetName(),h_rew->GetTitle(),RooArgSet(*(wspace->var(varstring.c_str()))),*((RooDataHist*)(wspace->data(tmp_hist2.GetName()))));
+  wspace->import(tmp_pdf2);
+  
+  
+
+  
+  h_rew = (TH1F*) freweighted->Get("monohiggs_signal_BarZp-500-1_signal_mistagUp");
+  h_rew->SetName("reweighted_monohiggs_signal_BarZp-500-1_signal_mistagUp");
+  fOut->WriteTObject(h_rew);
+  
+  RooDataHist tmp_hist3(h_rew->GetName(),h_rew->GetTitle(), RooArgList(*(wspace->var(varstring.c_str()))),h_rew);     
+  wspace->import(tmp_hist3);                                                                                                                                                       
+  RooHistPdf tmp_pdf3(h_rew->GetName(),h_rew->GetTitle(),RooArgSet(*(wspace->var(varstring.c_str()))),*((RooDataHist*)(wspace->data(tmp_hist3.GetName()))));
+  wspace->import(tmp_pdf3);
+  
+
+
+  h_rew = (TH1F*) freweighted->Get("monohiggs_signal_BarZp-500-1_signal_mistagDown");
+  h_rew->SetName("reweighted_monohiggs_signal_BarZp-500-1_signal_mistagDown");
+  fOut->WriteTObject(h_rew);
+  
+  RooDataHist tmp_hist4 (h_rew->GetName(),h_rew->GetTitle(), RooArgList(*(wspace->var(varstring.c_str()))),h_rew);     
+  wspace->import(tmp_hist4);                                                                                                                                                       
+  RooHistPdf tmp_pdf4 (h_rew->GetName(),h_rew->GetTitle(),RooArgSet(*(wspace->var(varstring.c_str()))),*((RooDataHist*)(wspace->data(tmp_hist4.GetName()))));
+  wspace->import(tmp_pdf4);
+  
+  
+
+
+
+
 }
 
 void ModelBuilder::saveHist(TH1F *histogram){
@@ -91,8 +158,10 @@ void ModelBuilder::saveHist(TH1F *histogram){
   }
   */
 
-  string histname = histogram->GetName();
+
   
+  string histname = histogram->GetName();
+  std::cout<<" Raman :: integral of "<<histname<<" is "<<histogram->Integral()<<std::endl;
   //string scale_string = "Scale";
   if (histname.find("Scale") != std::string::npos){
     std::size_t found = histname.find_last_of("_");
@@ -183,7 +252,7 @@ void ModelBuilder::saveHist(TH1F *histogram){
    // also make a RooDataHist and RooHistPdf
 //   RooDataHist tmp_hist(Form("dhist_%s",histogram->GetName()),histogram->GetTitle(),RooArgList(*(wspace->var(varstring.c_str()))),histogram);
 //   wspace->import(tmp_hist);
-
+  
 //   RooHistPdf tmp_pdf(Form("hpdf_%s",histogram->GetName()),histogram->GetTitle(),RooArgSet(*(wspace->var(varstring.c_str()))),*((RooDataHist*)(wspace->data(tmp_hist.GetName()))));
 //   wspace->import(tmp_pdf);
 }
@@ -289,7 +358,8 @@ void ModelBuilder::save(){
     	saveHist(hist_c);
     }
   }
-
+  
+  saveReweightedHist();
   fOut->cd();
   wspace->Write();
 }
@@ -557,7 +627,7 @@ void ModelBuilder::addSample(std::string name, std::string region, std::string p
    /**************************************************************************/
    if (! (wspace->genobj("treevars"))) {
    	//treevariables.SetName("treevars");
-   	wspace->import(treevariables);
+     wspace->import(treevariables);
    }
    
    std::string lcutstring = cutstring;
@@ -571,9 +641,10 @@ void ModelBuilder::addSample(std::string name, std::string region, std::string p
    	   lcutstring+=" && "+(*it_ecut).second;
    }
 
-   std::cout << " CUT STRING FOR " << process <<  ", in " << region  << " : " << lcutstring.c_str() << std::endl;
+   std::cout << " CUT STRING FOR " << process <<  ", in " << region  << " : " << lcutstring.c_str() <<"  "<<saveDataset<< std::endl;
    if (is_mc) {
-   	tmp_hist = (TH1F*)generateTemplate(lTmp,(TTree *)fIn->Get(name.c_str()),varstring,weightname,lcutstring,Form("_tmphist%s",catname.c_str()));
+     std::cout<<" generating template for"<<name.c_str()<<"  "<<varstring<<"  "<<weightname<<"  "<<lcutstring<<"  "<<Form("_tmphist%s",catname.c_str())<<std::endl;
+     tmp_hist = (TH1F*)generateTemplate(lTmp,(TTree *)fIn->Get(name.c_str()),varstring,weightname,lcutstring,Form("_tmphist%s",catname.c_str()));
         if (saveDataset)  tmp_data = new RooDataSet("tmpdata","dataset",treevariables,RooFit::Import(*(TTree*)fIn->Get(name.c_str())),RooFit::Cut(lcutstring.c_str()),RooFit::WeightVar(weightname.c_str()));
    } else {
    	tmp_hist = (TH1F*)generateTemplate(lTmp,(TTree *)fIn->Get(name.c_str()),varstring,"",lcutstring,Form("_tmphist%s",catname.c_str()));
@@ -593,8 +664,9 @@ void ModelBuilder::addSample(std::string name, std::string region, std::string p
    if (it_sample!=v_samples.end()) {
 
      bool proc_exists = has_process((*it_sample).second,process);
-
+     std::cout<<" proc_exists for = "<<pRegion+std::string("_")+process<<"  "<<proc_exists<<std::endl;
      if (proc_exists){
+       std::cout<<" proc_exists for = "<<pRegion+std::string("_")+process<<std::endl;
         save_hists[pRegion+std::string("_")+process]->Add(tmp_hist);
 
 

@@ -88,7 +88,9 @@ for cat_id,cat in enumerate(x.categories):
           noSys = True
 	  
   
+  
   mb.save()
+          
   print mb.cutstring
 
   # Add any 'cutstring' for future reference
@@ -101,4 +103,4 @@ config.ReadFile("configs/%s.py"%(args[0]))
 fout.cd(); config.Write()
 
 print "done!, Model saved in -> ", fout.GetName()
-'''
+

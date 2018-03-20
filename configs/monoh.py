@@ -29,9 +29,9 @@ systematics=["btag","mistag",'sjbtag','sjmistag','Scale','PDF','DoubleB']
  
 monohiggs_category = {
 	    'name':"monohiggs"
-            ,'in_file_name':"/data/t3home000/bmaier/flat_v12/limits_Raman/limitForest_all.root"
-            ,"cutstring":"1==1"
-#            ,"cutstring":"N2DDT<0.0"
+            ,'in_file_name':"limitForest_nominal.root"
+            #,"cutstring":"1==1"
+            ,"cutstring":"N2DDT<0.0"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
 	    ,"bins":bins[:]
