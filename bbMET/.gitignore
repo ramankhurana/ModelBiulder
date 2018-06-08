@@ -1,6 +1,9 @@
 ## ignore the root files
 
 !/*.root
+<<<<<<< HEAD
 !/*.so
 !/*.d
 !/*.pcm
+=======
+>>>>>>> 1aaca5ffd29e3a73f6fdfd4a8726042291c96bf1
