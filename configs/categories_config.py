@@ -8,7 +8,7 @@ bins = [200,250,300,400,500,700,1000]
 #bins = [250,300,350,400,500,600,1000]
 # will expect samples with sample_sys_Up/Down but will skip if not found 
 #systematics=["Met","FP","btag","mistag","wjethf","zjethf","gjethf"]
-systematics=["Met","FP","btag","mistag"]
+systematics=['met','btag','ewkTop','ewkW','ewkZ','lep']
 # Define each of the categories in a dictionary of the following form .. 
 #	'name' : the category name 
 #	'in_file_name' : input ntuple file for this category 
