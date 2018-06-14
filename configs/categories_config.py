@@ -31,7 +31,7 @@ bbMET_1btag = {
        #,'in_file_name':"files/monotop-boosted-combo-weight.root"
 #       ,'in_file_name':"files/monotop-boosted-combo-mar9.root"
        ,'in_file_name':"files/AllMETHistos.root"
-	   ,"cutstring":"met>200 && met<1000"
+	   ,"cutstring":""      #met>200 && met<1000
 	   ,"varstring":["met",200,1000]
 	   ,"weightname":"weight"
 	   ,"bins":bins[:]
@@ -44,59 +44,59 @@ bbMET_1btag = {
 	   ,"samples":
 	   	{  
 		  # Signal Region
-		   "ZnunuLO_signal"  	       :['SR','ZJets',1,0]
-          ,"DY_signal"	               :['SR','DYJets',1,0]
- 		  ,"WJets_signal"  	           :['SR','WJets',1,0]
-		  ,"VV_signal"  	           :['SR','DIBOSON',1,0]
-		  ,"Top_signal"   	           :['SR','Top',1,0]
-		  ,"SingleTop_signal"          :['SR','STop',1,0]
-		  ,"QCD_signal"		     	   :['SR','QCD',1,0]
-		  ,"data_signal"	           :['SR','data_obs',0,0]
+		   "SR_1b_ZJets"  	           :['SR_1b','ZJets',1,0]
+          ,"SR_1b_DYJets"	           :['SR_1b','DYJets',1,0]
+ 		  ,"SR_1b_WJets"  	           :['SR_1b','WJets',1,0]
+		  ,"SR_1b_DIBOSON"  	       :['SR_1b','DIBOSON',1,0]
+		  ,"SR_1b_Top"   	           :['SR_1b','Top',1,0]
+		  ,"SR_1b_STop"                :['SR_1b','STop',1,0]
+		  ,"SR_1b_QCD"		     	   :['SR_1b','QCD',1,0]
+		  ,"SR_1b_data_obs"	           :['SR_1b','data_obs',0,0]
 
 		  # some signals 
 
-      ,"Mchi-1_Mphi-50_signal"		   :['signal','Mchi-1_Mphi-50',1,1]
+      ,"bbNLO_pseudo_1b_Mchi-1_Mphi-50"		   :['signal','Mchi-1_Mphi-50',1,1]
 
 		  # Zmumu-Control
-		  ,"DY_Zmumu_control"	       :['Zmumu','DYJets',1,1]
-		  ,"WJets_Zmumu_control"  	   :['Zmumu','WJets',1,0]
-		  ,"Diboson_Zmumu_control"  	   :['Zmumu','DIBOSON',1,0]
-		  ,"Top_Zmumu_control"         :['Zmumu','Top',1,0]
-		  ,"SingleTop_Zmumu_control"     :['Zmumu','STop',1,0]
-		  ,"data_Zmumu_control"	   :['Zmumu','data_obs',0,0]
+		  ,"Zmumu_1b_DYJets"	       :['Zmumu_1b','DYJets',1,1]
+		  ,"Zmumu_1b_WJets"  	       :['Zmumu_1b','WJets',1,0]
+		  ,"Zmumu_1b_DIBOSON"  	       :['Zmumu_1b','DIBOSON',1,0]
+		  ,"Zmumu_1b_To"               :['Zmumu_1b','Top',1,0]
+		  ,"Zmumu_1b_STop"             :['Zmumu_1b','STop',1,0]
+		  ,"Zmumu_1b_dataobs"	       :['Zmumu_1b','data_obs',0,0]
 
 
             # Single muon (w) control
-		  ,"DY_Wmunu_control"	   :['Wmunu','DYJets',1,0]
-		  ,"WJets_Wmunu_control"     :['Wmunu','WJets',1,1]
-		  ,"Diboson_Wmunu_control"        :['Wmunu','DIBOSON',1,0]
-		  ,"SingleTop_Wmunu_control" :['Wmunu','STop',1,0]
-		  ,"Top_Wmunu_control"     :['Wmunu','Top',1,0]
-		  ,"QCD_Wmunu_control"	   :['Wmunu','QCD',1,0]
-		  ,"data_Wmunu_control"	   :['Wmunu','data_obs',0,0]
+		  ,"Wmunu_1b_DYJets"	       :['Wmunu_1b','DYJets',1,0]
+		  ,"Wmunu_1b_WJets"            :['Wmunu_1b','WJets',1,1]
+		  ,"Wmunu_1b_DIBOSON"          :['Wmunu_1b','DIBOSON',1,0]
+		  ,"Wmunu_1b_STop"             :['Wmunu_1b','STop',1,0]
+		  ,"Wmunu_1b_Top"              :['Wmunu_1b','Top',1,0]
+		  ,"Wmunu_1b_QCD"	           :['Wmunu_1b','QCD',1,0]
+		  ,"Wmunu_1b_data_obs"	       :['Wmunu_1b','data_obs',0,0]
 
 
 		  # Di electron-Control
-		  ,"DY_Zee_control"	   :['Zee','DYJets',1,1]
-		  ,"WJets_Zee_control"     :['Zee','WJets',1,0]
-		  ,"Diboson_Zee_control"  	   :['Zee','DIBOSON',1,0]
-		  ,"Top_Zee_control"      :['Zee','Top',1,0]
-		  ,"SingleTop_Zee_control"  :['Zee','STop',1,0]
-		  ,"data_Zee_control"	   :['Zee','data_obs',0,0]
+		  ,"Zee_1b_DYJets"	           :['Zee_1b','DYJets',1,1]
+		  ,"Zee_1b_WJets"              :['Zee_1b','WJets',1,0]
+		  ,"Zee_1b_DIBOSON"  	       :['Zee_1b','DIBOSON',1,0]
+		  ,"Zee_1b_Top"                :['Zee_1b','Top',1,0]
+		  ,"Zee_1b_STop"               :['Zee_1b','STop',1,0]
+		  ,"Zee_1b_data_obs"           :['Zee_1b','data_obs',0,0]
 
           # Single electron (w) control
-		  ,"DY_Wenu_control"       :['Wenu','DYJets',1,0]
-		  ,"WJets_Wenu_control"     :['Wenu','WJets',1,1]
-		  ,"Diboson_Wenu_control"        :['Wenu','DIBOSON',1,0]
-		  ,"SingleTop_Wenu_control" :['Wenu','STop',1,0]
-		  ,"Top_Wenu_control"     :['Wenu','Top',1,0]
-		  ,"QCD_Wenu_control"       :['Wenu','QCD',1,0]
-		  ,"data_Wenu_control"      :['Wenu','data_obs',0,0]
+		  ,"Wenu_1b_DYJets"            :['Wenu_1b','DYJets',1,0]
+		  ,"Wenu_1b_WJets"             :['Wenu_1b','WJets',1,1]
+		  ,"Wenu_1b_DIBOSON"           :['Wenu_1b','DIBOSON',1,0]
+		  ,"Wenu_1b_STop"              :['Wenu_1b','STop',1,0]
+		  ,"Wenu_1b_Top"               :['Wenu_1b','Top',1,0]
+		  ,"Wenu_1b_QCD"               :['Wenu_1b','QCD',1,0]
+		  ,"Wenu_1b_data_obs"          :['Wenu_1b','data_obs',0,0]
 		  
 		  # Top control
-		  ,"Diboson_Top_control"  	   :['Top','DIBOSON',1,0]
-		  ,"Top_Top_control"      :['Top','Top',1,0]
-		  ,"SingleTop_Top_control"  :['Top','STop',1,0]		  
+		  ,"Top_1b_DIBOSON"  	       :['Top_1b','DIBOSON',1,0]
+		  ,"Top_1b_Top"                :['Top_1b','Top',1,0]
+		  ,"Top_1b_STop"               :['Top_1b','STop',1,0]		  
 		  
 		  
 	   	},
