@@ -62,7 +62,9 @@ for cat_id,cat in enumerate(x.categories):
   for sample in samples:
       entry = cat['samples'][sample]
       print sample
-      if not options.skip:  mb.addSample(sample,entry[0],entry[1],entry[2],entry[3])  # name, region, process, is_mc, is_signal
+      print "Flag 3"
+      if not options.skip:
+        mb.addSample(sample,entry[0],entry[1],entry[2],entry[3])  # name, region, process, is_mc, is_signal
       else : 
         try: 
 	     sampentry = fin.Get(sample)
