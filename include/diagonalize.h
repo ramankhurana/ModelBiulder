@@ -69,16 +69,16 @@ void freezeParameters(RooArgSet *args, bool freeze=1){
       rrv->setConstant(freeze);
   }
 }
-TH1F *generateTemplate(TH1F *base, TTree *tree, std::string varname, std::string weightname, std::string cut="1>0", std::string ext=""){
-
+TH1F *generateTemplate(TH1F *base, TH1F *tree, std::string varname, std::string weightname, std::string cut="1>0", std::string ext=""){
   assert(tree);
   assert(base);
   // Correction point to point
   TH1F *histNew = (TH1F*) base->Clone("hnew");
   histNew->Sumw2();
   histNew->SetName(Form("%s%s%d",tree->GetName(),ext.c_str(),randC)); randC++;
-  if (weightname!="" ) tree->Draw(Form("%s >> %s",varname.c_str(),histNew->GetName()),Form("%s*(%s)",weightname.c_str(),cut.c_str()));
-  else tree->Draw(Form("%s >> %s",varname.c_str(),histNew->GetName()),cut.c_str());
+//  if (weightname!="" ) tree->Draw(Form("%s >> %s",varname.c_str(),histNew->GetName()),Form("%s*(%s)",weightname.c_str(),cut.c_str()));
+//  else tree->Draw(Form("%s >> %s",varname.c_str(),histNew->GetName()),cut.c_str());
+  tree->Draw();
   histNew->GetXaxis()->SetTitle(varname.c_str());
   return histNew;
 }
