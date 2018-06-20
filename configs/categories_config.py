@@ -61,9 +61,9 @@ bbMET_1btag = {
 		  ,"Zmumu_1b_DYJets"	       :['Zmumu_1b','DYJets',1,1]
 		  ,"Zmumu_1b_WJets"  	       :['Zmumu_1b','WJets',1,0]
 		  ,"Zmumu_1b_DIBOSON"  	       :['Zmumu_1b','DIBOSON',1,0]
-		  ,"Zmumu_1b_To"               :['Zmumu_1b','Top',1,0]
+		  ,"Zmumu_1b_Top"               :['Zmumu_1b','Top',1,0]
 		  ,"Zmumu_1b_STop"             :['Zmumu_1b','STop',1,0]
-		  ,"Zmumu_1b_dataobs"	       :['Zmumu_1b','data_obs',0,0]
+		  ,"Zmumu_1b_data_obs"	       :['Zmumu_1b','data_obs',0,0]
 
 
             # Single muon (w) control
