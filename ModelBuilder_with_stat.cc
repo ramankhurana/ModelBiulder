@@ -641,16 +641,17 @@ void ModelBuilder::addSample(std::string name, std::string region, std::string p
    	   lcutstring+=" && "+(*it_ecut).second;
    }
 
-   std::cout << " CUT STRING FOR " << process <<  ", in " << region  << " : " << lcutstring.c_str() <<"  "<<saveDataset<< std::endl;
+   std::cout << " CUT STRING FOR " << process <<  ", in " << region  << " : " << lcutstring.c_str() <<"  "<<saveDataset<< "  MC:"<< is_mc << std::endl;
    if (is_mc) {
      std::cout<<" generating template for"<<name.c_str()<<"  "<<varstring<<"  "<<weightname<<"  "<<lcutstring<<"  "<<Form("_tmphist%s",catname.c_str())<<std::endl;
-     tmp_hist = (TH1F*)generateTemplate(lTmp,(TTree *)fIn->Get(name.c_str()),varstring,weightname,lcutstring,Form("_tmphist%s",catname.c_str()));
-        if (saveDataset)  tmp_data = new RooDataSet("tmpdata","dataset",treevariables,RooFit::Import(*(TTree*)fIn->Get(name.c_str())),RooFit::Cut(lcutstring.c_str()),RooFit::WeightVar(weightname.c_str()));
+     tmp_hist = (TH1F*)generateTemplate(lTmp,(TH1F *)fIn->Get(name.c_str()),varstring,weightname,lcutstring,Form("_tmphist%s",catname.c_str()));
+//        if (saveDataset)  tmp_data = new RooDataSet("tmpdata","dataset",treevariables,RooFit::Import(*(TTree*)fIn->Get(name.c_str())),RooFit::Cut(lcutstring.c_str()),RooFit::WeightVar(weightname.c_str()));
    } else {
-   	tmp_hist = (TH1F*)generateTemplate(lTmp,(TTree *)fIn->Get(name.c_str()),varstring,"",lcutstring,Form("_tmphist%s",catname.c_str()));
-   	if (saveDataset) tmp_data = new RooDataSet("tmpdata","dataset",treevariables,RooFit::Import(*(TTree*)fIn->Get(name.c_str())),RooFit::Cut(lcutstring.c_str()));
+   	tmp_hist = (TH1F*)generateTemplate(lTmp,(TH1F *)fIn->Get(name.c_str()),varstring,"",lcutstring,Form("_tmphist%s",catname.c_str()));
+   	
+//   	if (saveDataset) tmp_data = new RooDataSet("tmpdata","dataset",treevariables,RooFit::Import(*(TTree*)fIn->Get(name.c_str())),RooFit::Cut(lcutstring.c_str()));
    }
-
+   
    std::map<std::string,ControlRegion>::iterator it_sample = v_samples.find(region);
    
    int type;
@@ -661,35 +662,38 @@ void ModelBuilder::addSample(std::string name, std::string region, std::string p
    TString tRegion = region;
    //tRegion.ReplaceAll("_Met","");
    std::string pRegion = tRegion.Data();
+   
+   cout << "Flag 1" << endl;
    if (it_sample!=v_samples.end()) {
-
+    cout << "Flag 2" << endl;
      bool proc_exists = has_process((*it_sample).second,process);
      std::cout<<" proc_exists for = "<<pRegion+std::string("_")+process<<"  "<<proc_exists<<std::endl;
      if (proc_exists){
        std::cout<<" proc_exists for = "<<pRegion+std::string("_")+process<<std::endl;
         save_hists[pRegion+std::string("_")+process]->Add(tmp_hist);
 
-
-	if (saveDataset) {
-	  save_datas[pRegion+std::string("_")+process]->append(*tmp_data);
-	  //std::cout << "Adding to existing sample -- " <<pRegion+std::string("_")+process << " -> " <<  name.c_str() << ", dataset=" << tmp_data->sumEntries()  << " histogram=" <<tmp_hist->Integral() << std::endl; 
-	}
+    
+//	    if (saveDataset) {
+//	      save_datas[pRegion+std::string("_")+process]->append(*tmp_data);
+//	      //std::cout << "Adding to existing sample -- " <<pRegion+std::string("_")+process << " -> " <<  name.c_str() << ", dataset=" << tmp_data->sumEntries()  << " histogram=" <<tmp_hist->Integral() << std::endl; 
+//	    }
      } else {
      	//std::cout << "CREATE NEW PROCESS" << process << ", sample" << name << std::endl;
    	tmp_hist->SetName(Form("%s_%s",pRegion.c_str(),process.c_str()));
-	if (saveDataset) tmp_data->SetName(Form("%s_%s",pRegion.c_str(),process.c_str()));
+//	if (saveDataset) tmp_data->SetName(Form("%s_%s",pRegion.c_str(),process.c_str()));
 	//fOut->WriteTObject(tmp_hist);
 	save_hists[pRegion+std::string("_")+process] = tmp_hist;
 
 
 
-	if (saveDataset) save_datas[pRegion+std::string("_")+process] = tmp_data;
+//	if (saveDataset) save_datas[pRegion+std::string("_")+process] = tmp_data;
 
 	((*it_sample).second).procs.push_back(std::pair<std::string,int> (process,type));
 
      }
    }
    else {
+    cout << "Flag 3" << endl;
 	ControlRegion cregion;
 	cregion.name = region;
 	cregion.procs.push_back(std::pair<std::string,int> (process,type));
@@ -700,11 +704,11 @@ void ModelBuilder::addSample(std::string name, std::string region, std::string p
 
 
 	
-	if (saveDataset){
-   	 tmp_data->SetName(Form("%s_%s",pRegion.c_str(),process.c_str()));
-	 save_datas.insert(std::pair<std::string,RooDataSet*> (pRegion+std::string("_")+process,tmp_data));
-	 //fOut->WriteTObject(tmp_hist);
-	}
+//	if (saveDataset){
+//   	 tmp_data->SetName(Form("%s_%s",pRegion.c_str(),process.c_str()));
+//	 save_datas.insert(std::pair<std::string,RooDataSet*> (pRegion+std::string("_")+process,tmp_data));
+//	 //fOut->WriteTObject(tmp_hist);
+//	}
    } 
 
 }
